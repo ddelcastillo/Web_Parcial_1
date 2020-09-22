@@ -1,0 +1,17 @@
+.banner {
+  padding: 0%;
+}
+
+.fancy {
+  padding: 0.2em;
+  font-family: "Satisfy", cursive;
+}
+
+.icon {
+  display: inline-block;
+  width: 3em;
+}
+
+.navbar {
+  padding: 2em;
+}
