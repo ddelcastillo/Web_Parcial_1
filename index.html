@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!--Styles-->
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./header-styles.css" />
+    <link rel="stylesheet" href="./banner-styles.css" />
+    <link rel="stylesheet" href="./table-styles.css" />
+    <link rel="stylesheet" href="./modal-styles.css" />
+    <!--Google font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Parcial 1</title>
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <div class="container-fluid header">
+        <div class="row header-row">
+          <div class="col-10 align-self-center header-col">
+            <h1 class="fancy">Restaurant & Lounge</h1>
+          </div>
+          <div class="col-1 align-self-center header-col">
+            <a class="thumbnail" href="#">
+              <img
+                class="img-responsive center-block d-block mx-auto header-icon"
+                src="./img/cart.png"
+                alt="Car"
+                id="car"
+              />
+            </a>
+          </div>
+          <div class="col-1 align-self-center header-col">
+            <p class="header-text" id="counter">Items: 0</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <hr />
+
+    <!--Banner-->
+    <div class="container-fluid banner">
+      <img class="img-fluid banner-image" src="./img/banner.png" alt="Banner" />
+    </div>
+
+    <hr />
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="#" id="burgers">Burgers</a>
+          <a class="nav-link" href="#" id="tacos">Tacos</a>
+          <a class="nav-link" href="#" id="salads">Salads</a>
+          <a class="nav-link" href="#" id="desserts">Desserts</a>
+          <a class="nav-link" href="#" id="drinksSides">Drinks & Sides</a>
+        </div>
+      </div>
+    </nav>
+
+    <hr />
+
+    <!--Main content-->
+    <div id="main"></div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="modal"
+      data-backdrop="static"
+      data-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">
+              Cancel the order
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+              id="cancel"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Are you sure about canceling the order?</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary first-button"
+              data-dismiss="modal"
+            >
+              Yes, I want to cancel the order
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary second-button"
+              data-dismiss="modal"
+            >
+              No, I want to continue adding products
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Main script-->
+    <script src="./main.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <footer>
+      <div class="container-fluid align-self-center">
+        <p class="header-text">
+          Contact us: +57 3102105253 - info@restaurant.com - @restaurant
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
