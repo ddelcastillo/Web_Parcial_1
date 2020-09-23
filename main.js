@@ -7,7 +7,7 @@ const url_data =
   "https://gist.githubusercontent.com/josejbocanegra/9a28c356416badb8f9173daf36d1460b/raw/5ea84b9d43ff494fcbf5c5186544a18b42812f09/restaurant.json";
 
 const starterTitle = "Burgers";
-  
+
 // VARIABLES
 
 /** Represents the body's main element where the information will be displayed. */
@@ -18,6 +18,21 @@ let main_data = [];
 
 /** Represents the shopping car (hash map) where products are stored. */
 let car = new Map();
+
+// MAIN METHODS
+
+/** Async function that returns the JSON object. */
+const fetchJSON = async (url) => {
+  let res = await fetch(url);
+  if (res.ok) return res.json();
+  else console.log(res.status);
+};
+
+/** Async function that runs the rendering of the product information. */
+const run = async () => {
+  main_data = await fetchJSON(url_data);
+  renderTable(starterTitle, main_data[0].products);
+};
 
 // LISTENERS
 
@@ -60,38 +75,35 @@ document.getElementById("drinksSides").addEventListener("click", () => {
 
 // METHODS
 
-/** Async function that runs the rendering of the product information. */
-const run = async () => {
-  main_data = await fetchJSON(url_data);
-  renderTable(starterTitle, main_data[0].products);
-};
-
-const fetchJSON = async (url) => {
-  let res = await fetch(url);
-  if (res.ok) return res.json;
-};
-
+/** Renders the table row with multiple columns containing menu info. */
 const renderTable = (title, products) => {
   let tableTitle = getTableTitle(title);
   main.innerHTML = "";
   main.appendChild(tableTitle);
+  let x = document.createElement("hr");
+  main.appendChild(x);
   main.appendChild(renderTableProducts(products));
 };
 
 const renderTableProducts = (products) => {
   // Main row
-  let row = document.createElement("row");
+  let row = document.createElement("div");
+  row.classList.add("row");
   row.classList.add("justify-conent-center");
+  row.classList.add("card-row");
   products.forEach((element) => {
     // Column such that there are 4 elements per row.
-    let col = document.createElement("col-3");
+    let col = document.createElement("div");
+    col.classList.add("col-3");
     // Card creation based on Boostrap template:
     let card = document.createElement("div");
+    card.classList.add("table-card");
     card.classList.add("card");
 
     // Card image:
     let img = document.createElement("img");
     img.classList.add("card-img-top");
+    img.classList.add("table-card-image");
     img.src = element.image;
     card.append(img);
 
@@ -162,14 +174,14 @@ const renderCar = () => {
   col1.appendChild(total);
   // Middle column:
   let col2 = document.createElement("div");
-  col2.classList.add("col-9");
+  col2.classList.add("col-8");
   // Cancel button:
   let col3 = document.createElement("div");
   col3.classList.add("col-1");
   col3.innerHTML = `<button type="button" class="btn second-button" data-toggle="modal" data-target="#modal">Cancel</button>`;
   // Confirm order:
   let col4 = document.createElement("div");
-  col4.classList.add("col-1");
+  col4.classList.add("col-2");
   let confirmButton = document.createElement("button");
   confirmButton.classList.add("btn");
   confirmButton.classList.add("first-button");
@@ -183,6 +195,7 @@ const renderCar = () => {
   row.appendChild(col2);
   row.appendChild(col3);
   row.appendChild(col4);
+  main.appendChild(row);
 };
 
 const renderCarProducts = () => {
@@ -234,3 +247,5 @@ const getTableTitle = (name) => {
   tableTitle.classList.add("table-title");
   return tableTitle;
 };
+
+run();

@@ -1,5 +1,6 @@
 .table-title {
   font-weight: bold;
+  padding: 0.2em;
 }
 
 .table-card-title {
@@ -14,5 +15,15 @@
   font-weight: bold;
 }
 
+.table-card-image {
+  width: 14rem;
+}
+
+.card-row {
+  margin: auto;
+  padding: 2em;
+}
+
 .table-card-button {
+  background-color: #333a42;
 }
