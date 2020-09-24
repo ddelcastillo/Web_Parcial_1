@@ -16,7 +16,14 @@
 }
 
 .table-card-image {
-  width: 14rem;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.table-card-col {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .card-row {

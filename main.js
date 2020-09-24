@@ -95,10 +95,12 @@ const renderTableProducts = (products) => {
     // Column such that there are 4 elements per row.
     let col = document.createElement("div");
     col.classList.add("col-3");
+    col.classList.add("table-card-col");
     // Card creation based on Boostrap template:
     let card = document.createElement("div");
     card.classList.add("table-card");
     card.classList.add("card");
+    card.classList.add("h-100");
 
     // Card image:
     let img = document.createElement("img");
@@ -110,6 +112,8 @@ const renderTableProducts = (products) => {
     // Card body:
     let body = document.createElement("div");
     body.classList.add("card-body");
+    body.classList.add("d-flex");
+    body.classList.add("flex-column");
     let bodyTitle = document.createElement("h5");
     bodyTitle.classList.add("card-title");
     bodyTitle.classList.add("table-card-title");
@@ -118,6 +122,9 @@ const renderTableProducts = (products) => {
     bodyText.classList.add("card-text");
     bodyText.classList.add("table-card-text");
     bodyText.innerHTML = element.description;
+    // Div for price and button.
+    let bottomCard = document.createElement("div");
+    bottomCard.classList.add("mt-auto");
     let bodyPrice = document.createElement("p");
     bodyPrice.classList.add("table-card-price");
     bodyPrice.innerHTML = "$" + element.price;
@@ -133,9 +140,9 @@ const renderTableProducts = (products) => {
     });
     body.appendChild(bodyTitle);
     body.appendChild(bodyText);
-    body.appendChild(bodyPrice);
-    body.appendChild(bodyButton);
-
+    bottomCard.appendChild(bodyPrice);
+    bottomCard.appendChild(bodyButton);
+    body.appendChild(bottomCard);
     // Final appends:
     card.appendChild(body);
     col.appendChild(card);
